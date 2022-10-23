@@ -9,7 +9,7 @@ All commands are run from the root of the project, from a terminal. `[package-ma
 | Command                         | Action                                                                           |
 | :------------------------------ | :------------------------------------------------------------------------------- |
 | `[package-manager] install`     | Installs dependencies                                                            |
-| `[package-manager] run dev`     | Starts local dev server at `localhost:3000`                                      |
+| `[package-manager] run dev`     | Starts local dev server at `localhost:3000`. In vscode this is set to the default build task (per default bound to `CTRL+SHIFT+B`)|
 | `[package-manager] run check`   | Checks the site for Typescript mistakes etc.                                     |
 | `[package-manager] run build`   | Build your production site to `./dist/`. `check` is recommended before this step |
 | `[package-manager] run preview` | Preview your build locally, before deploying                                     |
