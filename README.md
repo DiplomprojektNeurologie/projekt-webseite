@@ -1,5 +1,7 @@
 # 🚀 AstroWind
 
+[![.github/workflows/website-deploy-sftp.yml](https://github.com/DiplomprojektNeurologie/projekt-webseite/actions/workflows/website-deploy-sftp.yml/badge.svg)](https://github.com/DiplomprojektNeurologie/projekt-webseite/actions/workflows/website-deploy-sftp.yml)
+
 <img src="lighthouse-score.png" align="right"
      alt="AstroWind Lighthouse Score" width="100" height="358">
 
