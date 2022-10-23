@@ -12,7 +12,7 @@ const items = await Promise.all(
 );
 ---
 
-<section class="px-4 py-16 mx-auto max-w-6xl lg:py-20">
+<section class="px-4 py-16 mx-auto max-w-6xl lg:py-20 scroll-mt-16" id="news">
 	<div class="flex flex-col mb-6 lg:justify-between lg:flex-row md:mb-8">
 		<h2 class="max-w-lg mb-2 text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none lg:mb-5 group font-heading">
 			<span class="inline-block mb-1 sm:mb-4">News</span>
@@ -23,14 +23,16 @@ const items = await Promise.all(
 		{
 			items.map((post) => (
 				<article class="mb-6 transition">
-					<Picture
-						src={post.image}
-						class="object-cover w-full h-64 mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700"
-						widths={[400, 900]}
-						sizes="(max-width: 900px) 400px, 900px"
-						alt={post.title}
-						aspectRatio="16:9"
-					/>
+					<a href={getPermalink(post.slug, 'post')}>
+						<Picture
+							src={post.image}
+							class="object-cover w-full h-64 mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700"
+							widths={[400, 900]}
+							sizes="(max-width: 900px) 400px, 900px"
+							alt={post.title}
+							aspectRatio="16:9"
+						/>
+					</a>
 					<h3 class="mb-2 text-xl font-bold leading-snug sm:text-2xl font-heading">
 						<a
 							href={getPermalink(post.slug, 'post')}
