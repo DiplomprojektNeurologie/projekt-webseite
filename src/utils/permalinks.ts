@@ -2,7 +2,7 @@ import slugify from 'limax';
 
 import { SITE, BLOG } from '~/config.mjs';
 
-const trim = (str, ch) => {
+const trim = (str: string, ch?: string) => {
 	let start = 0,
 		end = str.length;
 	while (start < end && str[start] === ch) ++start;
@@ -49,7 +49,7 @@ export const getPermalink = (slug = '', type = 'page') => {
 export const getBlogPermalink = () => getPermalink(BLOG_BASE);
 
 /** */
-export const getHomePermalink = () => {
+export const getHomePermalink = (fragment?: string) => {
 	const permalink = getPermalink();
-	return permalink !== '/' ? permalink + '/' : permalink;
+	return (permalink !== '/' ? permalink + '/' : permalink) + '#' + (fragment ? fragment : '');
 };

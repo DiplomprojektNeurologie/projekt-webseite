@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "yarn",
+			"task": "dev",
+			"label": "yarn: dev",
+			"detail": "astro dev",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}

@@ -5,6 +5,7 @@ description: "Ornare cum cursus laoreet sagittis nunc fusce posuere per euismod 
 image: "~/assets/images/hero.jpg"
 category: "Tutorials"
 tags: [astro, tailwind css, front-end]
+draft: true
 ---
 
 ## Dictum integer fusce ac ridiculus et odio sollicitudin diam at
