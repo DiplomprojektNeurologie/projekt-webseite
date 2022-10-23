@@ -1,8 +1,6 @@
 # Projekt Neurologie Website
 
-[![.github/workflows/website-deploy-sftp.yml](https://github.com/DiplomprojektNeurologie/projekt-webseite/actions/workflows/website-deploy-sftp.yml/badge.svg)](https://github.com/DiplomprojektNeurologie/projekt-webseite/actions/workflows/website-deploy-sftp.yml)
-
-[![https://project.neurologie.tech status](https://img.shields.io/website?down_message=offline&style=plastic&up_message=online&url=https%3A%2F%2Fproject.neurologie.tech)](https://project.neurologie.tech)
+[![.github/workflows/website-deploy-sftp.yml](https://github.com/DiplomprojektNeurologie/projekt-webseite/actions/workflows/website-deploy-sftp.yml/badge.svg)](https://github.com/DiplomprojektNeurologie/projekt-webseite/actions/workflows/website-deploy-sftp.yml) [![https://project.neurologie.tech status](https://img.shields.io/website?down_message=offline&style=plastic&up_message=online&url=https%3A%2F%2Fproject.neurologie.tech)](https://project.neurologie.tech)
 
 ### Commands
 
