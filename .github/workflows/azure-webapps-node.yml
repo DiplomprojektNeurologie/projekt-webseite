@@ -78,8 +78,6 @@ jobs:
       with:
         # server
         server: ${{ secrets.WEBSITE_SERVER }}
-        # server port (default: 22)
-        port: 22
         # user
         user: ${{ secrets.WEBSITE_SERVER_USER }}
         # Private SSH key for user (include via secrets if possible)
@@ -91,4 +89,4 @@ jobs:
         # Path on server (default: .)
         remote: ./var/www/project
         # Additional options for SSH
-        ssh_options: '-v'
+        ssh_options: -v
