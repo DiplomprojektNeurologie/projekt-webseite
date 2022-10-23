@@ -70,6 +70,10 @@ const image =
 <Fonts />
 
 <!-- Google Site Verification -->
-{SITE.googleSiteVerificationId && <meta name="google-site-verification" content={SITE.googleSiteVerificationId} />}
+{
+	SITE.googleSiteVerificationId && (
+		<meta name="google-site-verification" content={SITE.googleSiteVerificationId as any as string} />
+	)
+}
 
 <ExtraMetaTags />
