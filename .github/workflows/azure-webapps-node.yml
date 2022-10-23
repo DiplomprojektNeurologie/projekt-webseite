@@ -90,3 +90,5 @@ jobs:
         local: .
         # Path on server (default: .)
         remote: ./var/www/project
+        # Additional options for SSH
+        ssh_options: '-v'
