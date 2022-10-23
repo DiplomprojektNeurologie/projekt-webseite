@@ -48,9 +48,8 @@ jobs:
         # Node version to use, defaults to the current LTS version.
         node-version: ${{ env.NODE_VERSION }}
         
-    - name: yarn install and build
+    - name: yarn build
       run: |
-        yarn install
         yarn build
 
     - name: Upload artifact for deployment job
@@ -76,17 +75,9 @@ jobs:
       # uses: swillner/sftp-sync-action@629e1fe7a2db87d0f1da0e15a970b514fe398c09
       uses: DiplomprojektNeurologie/sftp-sync-action@b7e6357613254eb1c8a8f9e1bd44177adcafb62f
       with:
-        # server
         server: ${{ secrets.WEBSITE_SERVER }}
-        # user
         user: ${{ secrets.WEBSITE_SERVER_USER }}
-        # Private SSH key for user (include via secrets if possible)
         user_private_key: ${{ secrets.WEBSITE_SERVER_KEY }}
-        # Public SSH key of host
         host_public_key: ${{ secrets.WEBSITE_SERVER_FINGERPRINT }}
-        # Local path to sync (default: .)
         local: .
-        # Path on server (default: .)
-        remote: ./var/www/project
-        # Additional options for SSH
-        ssh_options: -v
+        remote: /var/www/project
