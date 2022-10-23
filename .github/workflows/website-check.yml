@@ -1,0 +1,43 @@
+# This workflow will check the website
+on:
+  pull_request:
+    branches: [ "main" ]
+    paths:
+     - .github/workflows/**
+     - data/**
+     - public/**
+     - src/**
+     - .eslintignore
+     - .eslintrc.js
+     - .gitignore
+     - .nmprc
+     - astro.config.mjs
+     - package.json
+     - tailwind.config.cjs
+     - tsconfig.json
+     - yarn.lock
+     - package.lock
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: '16.x'                # set this to the node version to use
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'yarn'
+        
+    - name: yarn build
+      run: |
+        yarn install --immutable
+        yarn check
