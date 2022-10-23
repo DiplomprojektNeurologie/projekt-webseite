@@ -4,14 +4,15 @@
 
 ### Commands
 
-All commands are run from the root of the project, from a terminal:
+All commands are run from the root of the project, from a terminal. `[package-manager]` can be either `npm`, `pnpm` or `yarn` but should be held consistent:
 
-| Command            | Action                                       |
-| :----------------- | :------------------------------------------- |
-| `yarn install`     | Installs dependencies                        |
-| `yarn run dev`     | Starts local dev server at `localhost:3000`  |
-| `yarn run build`   | Build your production site to `./dist/`      |
-| `yarn run preview` | Preview your build locally, before deploying |
+| Command                         | Action                                                                           |
+| :------------------------------ | :------------------------------------------------------------------------------- |
+| `[package-manager] install`     | Installs dependencies                                                            |
+| `[package-manager] run dev`     | Starts local dev server at `localhost:3000`                                      |
+| `[package-manager] run check`   | Checks the site for Typescript mistakes etc.                                     |
+| `[package-manager] run build`   | Build your production site to `./dist/`. `check` is recommended before this step |
+| `[package-manager] run preview` | Preview your build locally, before deploying                                     |
 
 ### Deploy
 

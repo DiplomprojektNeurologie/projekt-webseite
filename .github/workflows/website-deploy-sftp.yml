@@ -3,6 +3,19 @@
 on:
   push:
     branches: [ "main" ]
+    paths:
+     - .github/workflows/**
+     - data/**
+     - public/**
+     - src/**
+     - .gitignore
+     - .nmprc
+     - astro.config.mjs
+     - package.json
+     - tailwind.config.cjs
+     - tsconfig.json
+     - yarn.lock
+     - package.lock
   workflow_dispatch:
 
 env:
@@ -21,18 +34,11 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ env.NODE_VERSION }}
-        cache: 'npm'
-        
-    - name: Setup Yarn
-      # You may pin to the exact commit or the version.
-      # uses: mskelton/setup-yarn@b0673acb4e37f20265fbddbf7567110ebb313605
-      uses: mskelton/setup-yarn@v1.2.1
-      with:
-        # Node version to use, defaults to the current LTS version.
-        node-version: ${{ env.NODE_VERSION }}
+        cache: 'yarn'
         
     - name: yarn build
       run: |
+        yarn install --immutable
         yarn build
 
     - name: Upload artifact for deployment job
@@ -59,6 +65,7 @@ jobs:
       uses: DiplomprojektNeurologie/sftp-sync-action@b7e6357613254eb1c8a8f9e1bd44177adcafb62f
       with:
         server: ${{ secrets.WEBSITE_SERVER }}
+        port: 22
         user: ${{ secrets.WEBSITE_SERVER_USER }}
         user_private_key: ${{ secrets.WEBSITE_SERVER_KEY }}
         host_public_key: ${{ secrets.WEBSITE_SERVER_FINGERPRINT }}
