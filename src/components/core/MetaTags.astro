@@ -1,6 +1,5 @@
 ---
-import { AstroSeo } from "@astrolib/seo"
-import { GoogleAnalytics } from "@astrolib/analytics"
+import { AstroSeo } from '@astrolib/seo';
 import { getImage } from '@astrojs/image';
 import { getRelativeUrlByFilePath } from '~/utils/directories';
 
@@ -18,7 +17,7 @@ const { src: defaultImage } = await getImage({
 
 const {
 	title = SITE.name,
-	description = '',
+	description = SITE.description,
 	image: _image = defaultImage,
 
 	canonical,
@@ -43,22 +42,22 @@ const image =
 <AstroSeo
 	title={title}
 	description={description}
-
 	canonical={canonical}
 	noindex={noindex}
 	nofollow={nofollow}
-
 	openGraph={{
 		url: canonical,
 		title: ogTitle,
 		description: description,
 		type: ogType,
-		images: image ? [
-			{
-				url: image.toString(),
-				alt: ogTitle,
-			},
-		] : undefined,
+		images: image
+			? [
+					{
+						url: image.toString(),
+						alt: ogTitle,
+					},
+			  ]
+			: undefined,
 		// site_name: 'SiteName',
 	}}
 	twitter={{
@@ -72,8 +71,5 @@ const image =
 
 <!-- Google Site Verification -->
 {SITE.googleSiteVerificationId && <meta name="google-site-verification" content={SITE.googleSiteVerificationId} />}
-
-<!-- Google Analytics -->
-{SITE.googleAnalyticsId && <GoogleAnalytics id={String(SITE.googleAnalyticsId)} partytown={true} />}
 
 <ExtraMetaTags />

@@ -1,7 +1,7 @@
 export const SITE = {
 	name: 'Neurology',
 
-	origin: 'https://projekt.neurologie.tech',
+	origin: 'https://project.neurologie.tech',
 	basePathname: '/',
 
 	title: 'Neurology — Discovering Strokes',
@@ -13,7 +13,7 @@ export const SITE = {
 
 export const PROTOTYPE = {
 	disabled: true,
-	url: 'https://prototyp.neurologie.tech',
+	url: 'https://prototype.neurologie.tech',
 }
 
 export const BLOG = {
