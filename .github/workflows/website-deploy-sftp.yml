@@ -19,7 +19,7 @@ on:
   workflow_dispatch:
 
 env:
-  NODE_VERSION: '18'                # set this to the node version to use
+  NODE_VERSION: '16'                # set this to the node version to use
 
 permissions:
   contents: read
