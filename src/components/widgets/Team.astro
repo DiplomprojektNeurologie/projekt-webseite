@@ -1,38 +1,38 @@
 ---
 import Icon from 'astro-icon';
-import pdamianikPic from '~/assets/images/pdamianik.webp';
+import felixPic from '~/assets/images/portraits/felix.webp';
+import dominikPic from '~/assets/images/portraits/dominik.webp';
+import philipPic from '~/assets/images/portraits/philip.webp';
+import alexPic from '~/assets/images/portraits/alex.webp';
 
 const members = [
 	{
-		name: 'Alexander Zmugg',
-		role: 'Data Scientist',
-		contact: 'jzmugg@student.tgm.ac.at',
-		image:
-			'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
-		alt: 'Generic avatar',
+		name: 'Felix Kampas',
+		role: 'Project Leader & Data Scientist',
+		contact: 'fkampas@student.tgm.ac.at',
+		image: (felixPic as any).src,
+		alt: 'An image of Felix Kampas',
 	},
 	{
 		name: 'Dominik Bosnic',
 		role: 'Data Scientist',
 		contact: 'dbosnic@student.tgm.ac.at',
-		image:
-			'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
-		alt: 'Generic avatar',
-	},
-	{
-		name: 'Felix Kampas',
-		role: 'Project Leader & Data Scientist',
-		contact: 'fkampas@student.tgm.ac.at',
-		image:
-			'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
-		alt: 'Generic avatar',
+		image: (dominikPic as any).src,
+		alt: 'An image of Dominik Bosnic',
 	},
 	{
 		name: 'Philip Damianik',
 		role: 'Webdeveloper',
 		contact: 'pdamianik@student.tgm.ac.at',
-		image: (pdamianikPic as any).src,
+		image: (philipPic as any).src,
 		alt: 'An image of Philip Damianik',
+	},
+	{
+		name: 'Alexander Zmugg',
+		role: 'Data Scientist',
+		contact: 'jzmugg@student.tgm.ac.at',
+		image: (alexPic as any).src,
+		alt: 'An image of Alexander Zmugg',
 	},
 ];
 ---
