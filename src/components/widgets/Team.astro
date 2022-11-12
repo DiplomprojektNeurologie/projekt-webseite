@@ -1,38 +1,35 @@
 ---
 import Icon from 'astro-icon';
-import felixPic from '~/assets/images/portraits/felix.webp';
-import dominikPic from '~/assets/images/portraits/dominik.webp';
-import philipPic from '~/assets/images/portraits/philip.webp';
-import alexPic from '~/assets/images/portraits/alex.webp';
+import Picture from '~/components/core/Picture.astro';
 
 const members = [
 	{
 		name: 'Felix Kampas',
 		role: 'Project Leader & Data Scientist',
 		contact: 'fkampas@student.tgm.ac.at',
-		image: (felixPic as any).src,
-		alt: 'An image of Felix Kampas',
+		image: import('~/assets/images/portraits/felix.webp'),
+		alt: 'A picture of Felix Kampas',
 	},
 	{
 		name: 'Dominik Bosnic',
 		role: 'Data Scientist',
 		contact: 'dbosnic@student.tgm.ac.at',
-		image: (dominikPic as any).src,
-		alt: 'An image of Dominik Bosnic',
+		image: import('~/assets/images/portraits/dominik.webp'),
+		alt: 'A picture of Dominik Bosnic',
 	},
 	{
 		name: 'Philip Damianik',
 		role: 'Webdeveloper',
 		contact: 'pdamianik@student.tgm.ac.at',
-		image: (philipPic as any).src,
-		alt: 'An image of Philip Damianik',
+		image: import('~/assets/images/portraits/philip.webp'),
+		alt: 'A picture of Philip Damianik',
 	},
 	{
 		name: 'Alexander Zmugg',
 		role: 'Data Scientist',
 		contact: 'jzmugg@student.tgm.ac.at',
-		image: (alexPic as any).src,
-		alt: 'An image of Alexander Zmugg',
+		image: import('~/assets/images/portraits/alex.webp'),
+		alt: 'A picture of Alexander Zmugg',
 	},
 ];
 ---
@@ -53,7 +50,13 @@ const members = [
 					members.map((member) => (
 						<div class="flex-auto mx-auto max-w-sm p-6 bg-white dark:bg-slate-900 rounded shadow-xl hover:shadow-lg transition dark:border dark:border-slate-800">
 							<div class="p-4">
-								<img class="mx-auto w-full aspect-square rounded-full" src={member.image} alt={member.alt} />
+								<Picture
+									class="mx-auto w-full aspect-square rounded-full"
+									src={member.image}
+									alt={member.alt}
+									widths={[400]}
+									aspectRatio="1:1"
+								/>
 							</div>
 							<div class="mt-4">
 								<p class="mb-1 font-bold text-gray-900 dark:text-slate-300">{member.name}</p>
