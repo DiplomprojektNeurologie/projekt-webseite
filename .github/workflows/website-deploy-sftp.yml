@@ -36,7 +36,6 @@ jobs:
         token: '${{ github.token }}'
         environment-url: https://project.neurologie.tech
         environment: production
-        ref: ${{ env.GITHUB_REF }}
 
     - uses: actions/checkout@v3
       name: Get latest version
