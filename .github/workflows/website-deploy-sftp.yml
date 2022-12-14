@@ -29,6 +29,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: chrnorm/deployment-action@v2
+      name: Create GitHub deployment
+      id: deployment
+      with:
+        token: '${{ github.token }}'
+        environment-url: https://project.neurologie.tech
+        environment: production
+        ref: ${{ env.GITHUB_REF }}
+
     - uses: actions/checkout@v3
 
     - name: Set up Node.js
@@ -42,13 +51,13 @@ jobs:
       uses: GuillaumeFalourd/setup-rsync@2b503a403f7185e6872bbc56f903d7395ddd75a2
       #uses: GuillaumeFalourd/setup-rsync@v1.1
 
-    - uses: chrnorm/deployment-action@v2
-      name: Create GitHub deployment
-      id: deployment
+    - name: Update deployment status (in progress)
+      uses: chrnorm/deployment-status@v2
       with:
         token: '${{ github.token }}'
         environment-url: https://project.neurologie.tech
-        environment: production
+        state: 'in_progress'
+        deployment-id: ${{ steps.deployment.outputs.deployment_id }}
         
     - name: yarn build
       run: |
