@@ -45,6 +45,14 @@ jobs:
       # You may pin to the exact commit or the version.
       uses: GuillaumeFalourd/setup-rsync@2b503a403f7185e6872bbc56f903d7395ddd75a2
       #uses: GuillaumeFalourd/setup-rsync@v1.1
+
+    - uses: chrnorm/deployment-action@v2
+      name: Create GitHub deployment
+      id: deployment
+      with:
+        token: '${{ github.token }}'
+        environment-url: https://project.neurologie.tech
+        environment: production
   
     - name: SFTP Sync
       # You may pin to the exact commit or the version.
@@ -58,3 +66,22 @@ jobs:
         host_public_key: ${{ secrets.WEBSITE_SERVER_FINGERPRINT }}
         local: ./dist/
         remote: /var/www/project
+       
+
+    - name: Update deployment status (success)
+      if: success()
+      uses: chrnorm/deployment-status@v2
+      with:
+        token: '${{ github.token }}'
+        environment-url: https://project.neurologie.tech
+        state: 'success'
+        deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+
+    - name: Update deployment status (failure)
+      if: failure()
+      uses: chrnorm/deployment-status@v2
+      with:
+        token: '${{ github.token }}'
+        environment-url: https://project.neurologie.tech
+        state: 'failure'
+        deployment-id: ${{ steps.deployment.outputs.deployment_id }}
