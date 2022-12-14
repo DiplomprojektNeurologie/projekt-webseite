@@ -23,6 +23,7 @@ env:
 
 permissions:
   contents: read
+  deployments: write
 
 jobs:
   build:
@@ -35,11 +36,6 @@ jobs:
       with:
         node-version: ${{ env.NODE_VERSION }}
         cache: 'yarn'
-        
-    - name: yarn build
-      run: |
-        yarn install --immutable
-        yarn build
 
     - name: Setup rsync
       # You may pin to the exact commit or the version.
@@ -53,6 +49,11 @@ jobs:
         token: '${{ github.token }}'
         environment-url: https://project.neurologie.tech
         environment: production
+        
+    - name: yarn build
+      run: |
+        yarn install --immutable
+        yarn build
   
     - name: SFTP Sync
       # You may pin to the exact commit or the version.
@@ -66,7 +67,6 @@ jobs:
         host_public_key: ${{ secrets.WEBSITE_SERVER_FINGERPRINT }}
         local: ./dist/
         remote: /var/www/project
-       
 
     - name: Update deployment status (success)
       if: success()
