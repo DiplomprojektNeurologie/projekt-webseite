@@ -1,11 +1,11 @@
 ---
 import Picture from '~/components/core/Picture.astro';
 
-import { findPostsByIds } from '~/utils/posts';
+import { fetchPosts, findPostsByIds } from '~/utils/posts';
 import { findImage } from '~/utils/images';
 import { getPermalink } from '~/utils/permalinks';
 
-const ids = ['finished-comparision-of-analysis-methods', 'finished-implementation', 'meet-and-greet', 'second-milestone-finished'];
+const ids = (await fetchPosts()).map(post => post.slug);
 
 const items = await Promise.all(
 	(await findPostsByIds(ids)).map(async (item) => ({ ...item, image: await findImage(item.image) }))
