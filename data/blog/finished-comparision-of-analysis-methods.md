@@ -1,7 +1,7 @@
 ---
 publishDate: "Jan 6 2022"
 title: "Analysis Comparison Finished"
-description: "The first milestone of the neurology project has been finished."
+description: "Today, we are excited to announce that the implementation and comparison of neural networks and factor analysis has been completed."
 image: "~/assets/images/blog/neural-networks.webp"
 tags: [success, progress, comparison]
 ---
