@@ -1,5 +1,5 @@
 ---
-publishDate: "Jan 6 2022"
+publishDate: "Jan 6 2023"
 title: "Analysis Comparison Finished"
 description: "Today, we are excited to announce that the implementation and comparison of neural networks and factor analysis has been completed."
 image: "~/assets/images/blog/neural-networks.webp"
